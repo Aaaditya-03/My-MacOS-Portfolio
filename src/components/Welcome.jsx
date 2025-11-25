@@ -39,7 +39,7 @@ const setTextHover = (container, type) => {
     const handleMouseMove = (e) => {
         if (rafId) return;
 
-        rafId = requestAnimationFrames(() => {
+        rafId = requestAnimationFrame(() => {
 
             const {left} = container.getBoundingClientRect();
             const mouseX = e.clientX - left;
@@ -55,13 +55,13 @@ const setTextHover = (container, type) => {
         })
     }
     const handleMouseLeave = () => {
-        letters.forEach((letter) => animateLetter(letter, base, base))
+        letters.forEach((letter) => animateLetter(letter, base))
     }
     container.addEventListener('mousemove', handleMouseMove);
     container.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
-        if (rafId) cancelAnimationFrames(rafId);
+        if (rafId) cancelAnimationFrame(rafId);
         container.removeEventListener('mousemove', handleMouseMove);
         container.removeEventListener('mouseleave', handleMouseLeave);
     }
