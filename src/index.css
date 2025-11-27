@@ -101,15 +101,15 @@ body {
         @apply flex gap-2;
 
         .close {
-            @apply size-3.5 rounded-full bg-[#ff6157] cursor-pointer;
+            @apply size-3.5 rounded-full bg-[#ff6157] cursor-pointer border-none p-0;
         }
 
         .minimize {
-            @apply size-3.5 rounded-full bg-[#ffc030];
+            @apply size-3.5 rounded-full bg-[#ffc030] border-none p-0;
         }
 
         .maximize {
-            @apply size-3.5 rounded-full bg-[#2acb42];
+            @apply size-3.5 rounded-full bg-[#2acb42] border-none p-0;
         }
     }
 

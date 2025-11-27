@@ -16,6 +16,8 @@ const WindowWrapper = (Component , windowKey) => {
             const el = ref.current;
             if (!el) return;
 
+            gsap.killTweensOf(el);
+
             if (isOpen) {
                 el.style.display = "block";
                 gsap.fromTo(el,
@@ -44,7 +46,7 @@ const WindowWrapper = (Component , windowKey) => {
                     onPress : () => focusWindow(windowKey)
                 })
 
-            return draggable.kill();
+            return () => draggable.kill();
         },[])
 
         return(
