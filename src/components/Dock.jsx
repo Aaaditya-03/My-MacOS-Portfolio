@@ -61,21 +61,20 @@ const Dock = () => {
     },[])
 
 
-    const toggle = (app) =>{
-        // TODO : Implement Open Window Logic
-        if(!app.canOpen) return;
+    const toggle = ({id , canOpen}) =>{
+        if(!canOpen) return;
 
-        const window = windows[app.id];
+        const window = windows[id];
 
         if(!window) {
-            console.log(`Window not found for app : ${app.id}`);
+            console.log(`Window not found for app : ${id}`);
             return;
         }
         if(window.isOpen){
-            closeWindow(app.id)
+            closeWindow(id)
         }
         else{
-            openWindow(app.id)
+            openWindow(id)
         }
     }
 
