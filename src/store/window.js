@@ -15,6 +15,7 @@ const useWindowStore = create(
             win.zIndex = state.nextZIndex;
             win.data = data ?? win.data;
             state.nextZIndex++;
+                console.log("inside window store " , win.data);
         }),
         closeWindow : (windowKey) =>
             set((state) => {
